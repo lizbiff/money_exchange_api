@@ -1,0 +1,8 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 200px;
+  list-style: none;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>💵Currency Converter💵</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h2>Current Exchange Rates</h2>
+      <ul>
+        <li v-for="(rate, country) in rates">
+          {{ country }} {{ rate }}
+        </li>
+      </ul>
+      <br>
+      <br>
+      <div class="your-money">
+          <p>Euro:</p>
+          <input v-model="money" type="number" name="" value="">
+          <label for="country_exchange">Which Currency?</label>
+          <select id="country_exchange" v-model="selectedRate">
+            <option disabled value="">Currency</option>
+            <option v-for="(rate, country) in rates" :value="rate">{{country}}</option>
+          </select>
+      </div>
+
+      <h3>This is how much it turns into: {{ getExchangeValue }}</h3>
+      <br>
+      <br>
+      <br>
+
+      <div class="convertEuro">
+          <label for="country_exchange">Which Currency?</label>
+          <select id="country_exchange" v-model="convertToEuro">
+            <option disabled value="">Currency</option>
+            <option v-for="(rate, country) in rates" :value="rate">{{country}}</option>
+          </select>
+          <p>Your money:</p>
+          <input v-model="nonEuro" type="number" name="" value="">
+      </div>
+
+      <h3>This is how much it turns into: {{ getEuroValue }}</h3>
+
+
+    </div>
+  </body>
+</html>
